@@ -161,9 +161,11 @@
 						<div class="nutrition-facts-table">
 							<h3><b>Nutrition Facts</b></h3>
 								How much do you consume per meal? :
-  								<input name="firstname" type="text">
+								<input id="servings" type="number">
+								<button onclick="getNutriFacts()">Try it!</button>  
+								<p id="demo"></p>
 							<p>Serving Size: 3/4 cup (27g) <br/>Servings per container: 22<br></p>
-							<table>
+							<table id="nutrition-table">
 								<thead class="top-border">
 									<th colspan="4">Amount Per Serving</th>	
 									<tr>
@@ -208,10 +210,11 @@
 										<td>2g</td>
 										<td class="right-aligned" colspan="2"><b>8%</b></td>
 									</tr>
-									<tr>
+									<tr title="Too much!">
 										<td><span class="tab">Sugars</span></td>
 										<td>10g</td>
 										<td class="right-aligned" colspan="2"></td>
+									</tr>
 									<tr>
 										<th>Protein</th>
 										<td>1g</td>
@@ -285,8 +288,20 @@
 			}
 		}
 
+		// Change values in nutrition table
+		function getNutriFacts() {
+			var servings = document.getElementById("servings").value;
+			var nutriVal = document.getElementById("nutrition-table").rows[0].cells;
+			var y = nutriVal[0].text;  
+	
+			
+			document.getElementById("demo").innerHTML = servings + " " + y;
+			
+		}
+		
 
-		</script>
+	
+	</script>
 </body>
 
 </html>
