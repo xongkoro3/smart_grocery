@@ -8,14 +8,7 @@
 	<title>Fruity Lucky</title>
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	<script>
-		$(document).ready(function(){
-		  $('[data-toggle="popover"]').popover({
-			  	html:true,
-				container: 'body'
-			}); 
-		});
-	</script>
+	
 	<link rel="stylesheet" href="style.css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
@@ -36,7 +29,6 @@
 				</button>
 				<a class="navbar-brand" href="#">NDHCI Grocery</a>
 			</div>
-
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
@@ -82,16 +74,17 @@
 			<div class="container-fliud">
 				<div class="wrapper row">
 					<div class="preview col-sm-3">
-
 						<div class="preview-pic tab-content">
-							<div class="tab-pane active" id="pic-1"><img src="i1.png" /></div>
-							<div class="tab-pane" id="pic-2"><img src="i2.png" /></div>
-							<div class="tab-pane" id="pic-3"><img src="i3.png" /></div>
-							<div class="tab-pane" id="pic-4"><img src="i4.png" /></div>
-							<div class="tab-pane" id="pic-5"><img src="i5.png" /></div>
-							<div class="tab-pane" id="pic-6"><img src="i6.png" /></div>
-							<div class="tab-pane" id="pic-7"><img src="i7.png" /></div>
-							<div class="tab-pane" id="pic-8"><img src="i8.png" /></div>
+							<div class="tab-pane active" id="pic-1"><img class="preview-img" src="i1.png" onclick="openModal()" /></div>
+							<div class="tab-pane" id="pic-2"><img class="preview-img" src="i2.png" /></div>
+							<div class="tab-pane" id="pic-3"><img class="preview-img" src="i3.png" /></div>
+							<div class="tab-pane" id="pic-4"><img class="preview-img" src="i4.png" /></div>
+							<div class="tab-pane" id="pic-5"><img class="preview-img" src="i5.png" /></div>
+							<div class="tab-pane" id="pic-6"><img class="preview-img" src="i6.png" /></div>
+							<div class="tab-pane" id="pic-7"><img class="preview-img" src="i7.png" /></div>
+							<div class="tab-pane" id="pic-8"><img class="preview-img" src="i8.png" /></div>
+							<!-- The Modal -->
+							<div id="modal-img" class="modal"><span class="close">&times;</span><img class="modal-content" id="img01"></div>
 						</div>
 						<ul class="preview-thumbnail nav nav-tabs">
 							<li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="i1.png" /></a></li>
@@ -103,7 +96,6 @@
 							<li><a data-target="#pic-7" data-toggle="tab"><img src="i7.png" /></a></li>
 							<li><a data-target="#pic-8" data-toggle="tab"><img src="i8.png" /></a></li>
 						</ul>
-						<!-- Nutrition Facts Table -->
 					</div>
 					<div class="details col-md-6">
 						
@@ -138,22 +130,14 @@
 
 						<div class="action">
 							<button class="add-to-cart btn btn-default" type="button" data-toggle="popover" data-content="Added to your cart" >add to cart</button>
-							<button class="like btn btn-default" type="button"><span id="likeBtn" class="fa fa-heart" onclick="btnClick()"></span></button>
+							<button class="like btn btn-default" type="button"><span id="likeBtn" class="fa fa-heart"></span></button>
 						</div>
-						<script>
-							function btnClick() {
-								document.getElementById("likeBtn").style.color = "red";
-							}
-						</script>	
-
-
-
 						<div class="row">
 							<div class="col-sm-12">
 								<h3>Comment</h3>
 							</div><!-- /col-sm-12 -->
 						</div><!-- /row -->
-						<div class="row">
+				`		<div class="row">
 							<div class="col-sm-2">
 								<div class="thumbnail">
 									<img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
@@ -178,7 +162,7 @@
 							<h3><b>Nutrition Facts</b></h3>
 								How much do you consume per meal? :
   								<input name="firstname" type="text">
-							<p>Serving Size 0.75<br/>Servings per container 20<br></p>
+							<p>Serving Size: 3/4 cup (27g) <br/>Servings per container: 22<br></p>
 							<table>
 								<thead class="top-border">
 									<th colspan="4">Amount Per Serving</th>	
@@ -192,40 +176,45 @@
 									<tr style="background-color: red;">	
 										<th data-toggle="popover" title="Too much!" data-content="Exceeds the current recommended amount!">Total Fat</th>
 										<td>1g</td>
-										<td class="right-aligned" colspan="2"><b>2%</b></td>
+										<td class="right-aligned" colspan="2"><b>1%</b></td>
 									</tr>
 									<tr>
 										<td><span class="tab">Saturated Fat</span></td>
-										<td>0</td>
+										<td>0g</td>
 										<td class="right-aligned" colspan="2"><b>0%</b></td>
 									</tr>
 									<tr>
 										<th>Cholesterol</th>
-										<td>0</td>
+										<td>0mg</td>
 										<td class="right-aligned" colspan="2"><b>0%</b></td>
 									</tr>
 									<tr>
 										<th>Sodium</th>
-										<td>150</td>
+										<td>150mg</td>
 										<td class="right-aligned" colspan="2"><b>6%</b></td>
 									</tr>
 									<tr>
-										<th>Total Carbohydratee</th>
-										<td>13</td>
-										<td class="right-aligned" colspan="2"><b>10%</b></td>
+										<th>Potassium</th>
+										<td>50mg</td>
+										<td class="right-aligned" colspan="2"><b>1%</b></td>
+									</tr>
+									<tr>
+										<th>Total Carbohydrate</th>
+										<td>23g</td>
+										<td class="right-aligned" colspan="2"><b>8%</b></td>
 									</tr>
 									<tr>
 										<td><span class="tab">Dietary Fiber</span></td>
-										<td>0</td>
-										<td class="right-aligned" colspan="2"><b>0%</b></td>
+										<td>2g</td>
+										<td class="right-aligned" colspan="2"><b>8%</b></td>
 									</tr>
 									<tr>
 										<td><span class="tab">Sugars</span></td>
-										<td>0</td>
+										<td>10g</td>
 										<td class="right-aligned" colspan="2"></td>
 									<tr>
-										<th>Protein %</th>
-										<td>5g</td>
+										<th>Protein</th>
+										<td>1g</td>
 										<td class="right-aligned" colspan="2"></td>
 									</tr>
 								</tbody>
@@ -257,17 +246,47 @@
 							</table>
 							<p>*Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs.
 							</p>
-							<script>
-								
-							
-							
-							</script>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<script>
+		$(document).ready(function(){
+		  $('[data-toggle="popover"]').popover({
+				html:true,
+				container: 'body'
+			}); 
+		});
+	
+		// Open the modal 
+		var modal = document.getElementById("modal-img");
+		var img = document.getElementsByClassName("preview-img");
+		var modalImg = document.getElementById("img01");
+		img[0].onclick = function() { 
+			modal.style.display = "block";
+			modalImg.src = this.src;
+		}		
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() { 
+			modal.style.display = "none";
+		}
+		// Change color of the like botton
+		var like = document.getElementsByClassName("like")[0];
+		var liked = document.getElementById("likeBtn");
+		like.onclick = function () {
+			if (liked.style.color == "black") {
+				liked.style.color = "red";
+			} else {
+				liked.style.color = "black";
+			}
+		}
+
+
+		</script>
 </body>
 
 </html>
