@@ -129,6 +129,15 @@
 						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
 
 						<div class="action">
+							<p>Qty: 
+								<select>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</p>
 							<button class="add-to-cart btn btn-default" type="button" data-toggle="popover" data-content="Added to your cart" >add to cart</button>
 							<button class="like btn btn-default" type="button"><span id="likeBtn" class="fa fa-heart"></span></button>
 						</div>
@@ -160,90 +169,116 @@
 						<!-- Nutrition Facts Table -->
 						<div class="nutrition-facts-table">
 							<h3><b>Nutrition Facts</b></h3>
-								How much do you consume per meal? :
-								<input id="servings" type="number">
+								How much do you consume per meal?: 
+								<input id="servings" type="number" min="1" max="22" value="1">
 								<button onclick="getNutriFacts()">Try it!</button>  
 								<p id="demo"></p>
 							<p>Serving Size: 3/4 cup (27g) <br/>Servings per container: 22<br></p>
 							<table id="nutrition-table">
 								<thead class="top-border">
-									<th colspan="4">Amount Per Serving</th>	
+									<th colspan="6">Amount Per Serving</th>	
 									<tr>
-										<td><b>Calories</b></td><td>140</td>
-										<td>Calories from Fat</td><td class="right-aligned">10</td>
+										<td class="bold" colspan="2">Calories</td>
+										<td >140</td>
+										<td colspan="2">Calories from Fat</td>
+										<td>10</td>
 									</tr>
 								</thead>
 								<tbody class="top-border">
-									<th class="right-aligned" colspan="4">% Daily Values*</th>
+									<th class="right-aligned" colspan="6">% Daily Values*</th>
 									<tr style="background-color: red;">	
 										<th data-toggle="popover" title="Too much!" data-content="Exceeds the current recommended amount!">Total Fat</th>
-										<td>1g</td>
-										<td class="right-aligned" colspan="2"><b>1%</b></td>
+										<td class="right-aligned">1</td>
+										<td>g</td>
+										<td class="right-aligned bold" colspan="2">1</td>
+										<td>%</td>
 									</tr>
 									<tr>
-										<td><span class="tab">Saturated Fat</span></td>
-										<td>0g</td>
-										<td class="right-aligned" colspan="2"><b>0%</b></td>
+										<td data-toggle="popover" title="What is Saturated Fat?" data-content="<a ref='https://www.google.com/search?q=saturated+fat&oq=saturate&aqs=chrome.1.0l2j69i57j0l3.11307j0j7&sourceid=chrome&ie=UTF-8'> to learn more...</a>"><span class="tab">Saturated Fat</span></td>
+										<td class="right-aligned">0</td>
+										<td>g</td>
+										<td class="right-aligned bold" colspan="2">0</td>
+										<td>%</td>
 									</tr>
 									<tr>
 										<th>Cholesterol</th>
-										<td>0mg</td>
-										<td class="right-aligned" colspan="2"><b>0%</b></td>
+										<td class="right-aligned">0</td>
+										<td>mg</td>
+										<td class="right-aligned bold" colspan="2">0</td>
+										<td>%</td>
 									</tr>
 									<tr>
 										<th>Sodium</th>
-										<td>150mg</td>
-										<td class="right-aligned" colspan="2"><b>6%</b></td>
+										<td class="right-aligned">150</td>
+										<td>mg</td>
+										<td class="right-aligned bold" colspan="2">6</td>
+										<td>%</td>
 									</tr>
 									<tr>
 										<th>Potassium</th>
-										<td>50mg</td>
-										<td class="right-aligned" colspan="2"><b>1%</b></td>
+										<td class="right-aligned">50</td>
+										<td>mg</td>
+										<td class="right-aligned bold" colspan="2">1</td>
+										<td>%</td>
 									</tr>
 									<tr>
 										<th>Total Carbohydrate</th>
-										<td>23g</td>
-										<td class="right-aligned" colspan="2"><b>8%</b></td>
+										<td class="right-aligned">23</td>
+										<td>g</td>
+										<td class="right-aligned bold" colspan="2">8</td>
+										<td>%</td>
 									</tr>
 									<tr>
 										<td><span class="tab">Dietary Fiber</span></td>
-										<td>2g</td>
-										<td class="right-aligned" colspan="2"><b>8%</b></td>
+										<td class="right-aligned">2</td>
+										<td>g</td>
+										<td class="right-aligned bold" colspan="2">8</td>
+										<td>%</td>
 									</tr>
 									<tr title="Too much!">
 										<td><span class="tab">Sugars</span></td>
-										<td>10g</td>
-										<td class="right-aligned" colspan="2"></td>
+										<td class="right-aligned">10</td>
+										<td>g</td>
+										<td class="right-aligned" colspan="3"></td>
 									</tr>
 									<tr>
 										<th>Protein</th>
-										<td>1g</td>
-										<td class="right-aligned" colspan="2"></td>
+										<td class="right-aligned">1</td>
+										<td>g</td>
+										<td class="right-aligned" colspan="3"></td>
 									</tr>
 								</tbody>
 								<tfoot class="top-border">
 									<tr>
 										<td>Vitamin A</td>
-										<td class="right-aligned">10%</td>
+										<td class="right-aligned">10</td>
+										<td>%</td>
 										<td>Folic Acid</td>
-										<td class="right-aligned">25%</td>
+										<td class="right-aligned">25</td>
+										<td>%</td>
 									<tr>
 										<td>Vitamin B-6</td>
-										<td class="right-aligned">25%</td>
+										<td class="right-aligned">25</td>
+										<td>%</td>
 										<td>Niacin</td>
-										<td class="right-aligned">25%</td>
+										<td class="right-aligned">25</td>
+										<td>%</td>
 									</tr>
 									<tr>
 										<td>Vitamin C</td>
-										<td class="right-aligned">10%</td>
+										<td class="right-aligned">10</td>
+										<td>%</td>
 										<td>Riboflavin</td>
-										<td class="right-aligned">25%</td>
+										<td class="right-aligned">25</td>
+										<td>%</td>
 									</tr>
 									<tr>
 										<td>Calcium</td>
-										<td class="right-aligned">10%</td>
+										<td class="right-aligned">10</td>
+										<td>%</td>
 										<td>Thiamin</td>
-										<td class="right-aligned">25%</td>
+										<td class="right-aligned">25</td>
+										<td>%</td>
 									</tr>
 								</tfoot>
 							</table>
@@ -291,16 +326,17 @@
 		// Change values in nutrition table
 		function getNutriFacts() {
 			var servings = document.getElementById("servings").value;
-			var nutriVal = document.getElementById("nutrition-table").rows[0].cells;
-			var y = nutriVal[0].text;  
-	
-			
-			document.getElementById("demo").innerHTML = servings + " " + y;
-			
+			var table = document.getElementById("nutrition-table").rows;
+					
+			for (i=0; i<table.length; i++) {
+				for (j=0; j<table[i].cells.length; j++) {
+					if (!isNaN(parseInt(table[i].cells[j].innerHTML))) {
+						table[i].cells[j].innerHTML = table[i].cells[j].innerHTML * servings;
+						
+					} 
+				}
+			}
 		}
-		
-
-	
 	</script>
 </body>
 

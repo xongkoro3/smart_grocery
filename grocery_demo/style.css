@@ -282,6 +282,10 @@ td, th {
 	border-top: 4px solid black;
 }
 
+.bold {
+	font-weight: bold;
+}
+
 .right-aligned {
 	padding-right: 6px;
 	text-align: right;
