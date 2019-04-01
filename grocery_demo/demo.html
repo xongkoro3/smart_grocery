@@ -15,7 +15,7 @@
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 
-<body>
+<body onload="getOriginalTable()">
 
 	<div class="#">
 		<nav class="navbar navbar-default" role="navigation">
@@ -171,7 +171,8 @@
 							<h3><b>Nutrition Facts</b></h3>
 								How much do you consume per meal?: 
 								<input id="servings" type="number" min="1" max="22" value="1">
-								<button onclick="getNutriFacts()">Try it!</button>  
+								<button onclick="getNutriFacts()">Try it!</button>
+								<button onclick="resetTable()">Reset</button>
 								<p id="demo"></p>
 							<p>Serving Size: 3/4 cup (27g) <br/>Servings per container: 22<br></p>
 							<table id="nutrition-table">
@@ -322,21 +323,43 @@
 				liked.style.color = "black";
 			}
 		}
+		
+		var originalTable = new Array();
+		
+		// Keep original table
+		function getOriginalTable() {
+			var tablevals = document.getElementById("nutrition-table").rows;
+			var test = "";
+			for (i=0; i<tablevals.length; i++) {
+				for (j=0; j<tablevals[i].cells.length; j++) {
+					if (!isNaN(parseInt(tablevals[i].cells[j].innerHTML))) {
+						var values = new Array(tablevals[i].cells[j].innerHTML);
+						originalTable.push(values);
+						
+					} 
+				}
+			}
+			console.log(originalTable);
+			console.log(values);
+			document.getElementById("demo").innerHTML = originalTable[0];
+		}
 
 		// Change values in nutrition table
 		function getNutriFacts() {
 			var servings = document.getElementById("servings").value;
 			var table = document.getElementById("nutrition-table").rows;
-					
+			
 			for (i=0; i<table.length; i++) {
 				for (j=0; j<table[i].cells.length; j++) {
-					if (!isNaN(parseInt(table[i].cells[j].innerHTML))) {
+					if (!isNaN(parseInt(table[i].cells[j].innerHTML)) && servings.length != 0 && servings > 0) {
 						table[i].cells[j].innerHTML = table[i].cells[j].innerHTML * servings;
 						
 					} 
 				}
 			}
 		}
+
+	
 	</script>
 </body>
 
