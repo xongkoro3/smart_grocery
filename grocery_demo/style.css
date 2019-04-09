@@ -268,14 +268,16 @@ img {
 }
 
 table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 20px;
-  margin-top: 5px;
+	border-collapse: collapse;
+  	width: 100%;
+  	margin-bottom: 20px;
+  	margin-top: 5px;
 }
 
 td, th {
-  border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border: 1px solid #ddd;
+
 }
 
 .top-border {
@@ -292,8 +294,8 @@ td, th {
 }
 
 .tab { 
-       display: inline-block; 
-       margin-left: 20px; 
+    display: inline-block; 
+	margin-left: 20px;	 
 }
 
 
