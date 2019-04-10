@@ -164,7 +164,6 @@
 								How much do you consume per meal?: 
 								<input id="servings" type="number" name="servings" min="1" max="22" value="1">
 								<button onclick="getNutriFacts()">Try it!</button>
-								<button onclick="getOriginalValues()">Reset</button>
 								<p id="demo"></p>
 							<p>Serving Size: 1 cup <br/>Servings per container: 8<br></p>
 							<table id="nutrition-table">
@@ -173,12 +172,16 @@
 									<tr>
 										<td class="bold">Calories</td>
 										<td class="right-aligned">150</td>
-										<td colspan="4"></td>
+										<td></td>
+										<td colspan="2"></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>Calories from Fat</td>
 										<td class="right-aligned">70</td>
-										<td colspan="4"></td>
+										<td></td>
+										<td colspan="2"></td>
+										<td></td>
 									</tr>
 								</thead>
 								<tbody class="top-border">
@@ -191,7 +194,7 @@
 										<td>%</td>
 									</tr>
 									<tr>
-										<td data-toggle="popover" title="What is Saturated Fat?" data-content="<a ref='https://www.google.com/search?q=saturated+fat&oq=saturate&aqs=chrome.1.0l2j69i57j0l3.11307j0j7&sourceid=chrome&ie=UTF-8'> to learn more...</a>"><span class="tab">Saturated Fat</span></td>
+										<td data-toggle="popover" title="What is Saturated Fat?" data-content="<a ref='https://www.google.com/search?q=saturated+fat&oq=saturate&aqs=chrome.1.0l2j69i57j0l3.11307j0j7&sourceid=chrome&ie=UTF-8'> to learn more...</a>">&nbsp;&nbsp;&nbsp;&nbsp;Saturated Fat</td>
 										<td class="right-aligned">5</td>
 										<td>g</td>
 										<td class="right-aligned bold" colspan="2">25</td>
@@ -219,23 +222,25 @@
 										<td>%</td>
 									</tr>
 									<tr>
-										<td><span class="tab">Dietary Fiber</span></td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;Dietary Fiber</td>
 										<td class="right-aligned">0</td>
 										<td>g</td>
 										<td class="right-aligned bold" colspan="2">0</td>
 										<td>%</td>
 									</tr>
 									<tr title="Too much!">
-										<td><span class="tab">Sugars</span></td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;Sugars</td>
 										<td class="right-aligned">11</td>
 										<td>g</td>
-										<td colspan="3"></td>
+										<td colspan="2"></td>
+										<td></td>
 									</tr>
 									<tr>
 										<th>Protein</th>
 										<td class="right-aligned">8</td>
 										<td>g</td>
-										<td colspan="3"></td>
+										<td colspan="2"></td>
+										<td></td>
 									</tr>
 								</tbody>
 								<tfoot class="top-border">
@@ -243,7 +248,7 @@
 										<td>Vitamin A</td>
 										<td class="right-aligned">69</td>
 										<td>%</td>
-										<td>phosphorus</td>
+										<td>Phosphorus</td>
 										<td class="right-aligned">20</td>
 										<td>%</td>
 									<tr>
@@ -259,7 +264,9 @@
 										<td>Calcium</td>
 										<td class="right-aligned">30</td>
 										<td>%</td>
-										<td colspan="3"></td>
+										<td></td>
+										<td></td>
+										<td></td>
 									</tr>
 								</tfoot>
 							</table>
@@ -304,62 +311,56 @@
 			}
 		}
 		
+		// Nutrition facts table rows.
+		var table = document.getElementById("nutrition-table").rows
 		// Create objects. This stores the original values.
 		var nutrients = [{
-			id : 1, name : "Calories", value : 140,}, {
-			id : 2, name : "Calories from Fat", value : 10, unit : null, dailyVals : null}, {
-			id : 3, name : "Total Fat", value : 1, unit : "g", dailyVals : 1}, {
-			id : 4, name : "Saturated Fat", value : 0, unit : "g", dailyVals : 0}, {
-			id : 5, name : "Cholesterol", value : 0, unit : "mg", dailyVals : 0}, {
-			id : 6, name : "Sodium", value : 150, unit : "mg", dailyVals : 6}, {	 
-			id : 7, name : "Potassium", value : 50, unit : "mg", dailyVals : 1}, {
-			id : 8, name : "Total Carbohydrate", value : 23, unit : "g", dailyVals : 8}, {
-			id : 9, name : "Dietary Fiber", value : 2, unit : "g", dailyVals : 8}, {
-			id : 10, name : "Sugars", value : 10, unit : "g", dailyVals : null}, {
-			id : 11, name : "Protein", value : 1, unit : "g", dailyVals : null}, {
-			id : 12, name : "Vitamin A", value : null, unit : null, dailyVals : 10}, {
-			id : 13, name : "Vitamin B-6", value : null, unit : null, dailyVals : 25}, {
-			id : 14, name : "Vitamin C", value : null, unit : null, dailyVals : 10}, {	 
-			id : 15, name : "Calcium", value : null, unit : null, dailyVals : 10}, {
-			id : 16, name : "Folic Acid", value : null, unit : null, dailyVals : 25}, {
-			id : 17, name : "Niacin", value : null, unit : null, dailyVals : 25}, {
-			id : 18, name : "Riboflavin", value : null, unit : null, dailyVals : 25}, {
-			id : 19, name : "Thiamin", dailyVals : 25}];
-	
+			id : 1, name : "Calories", value : 150, unit : null, dailyVals : null}, {
+			id : 2, name : "Calories from Fat", value : 70, unit : null, dailyVals : null}, {
+			id : 3, name : "Total Fat", value : 8, unit : "g", dailyVals : 12}, {
+			id : 4, name : "&nbsp;&nbsp;&nbsp;&nbsp;Saturated Fat", value : 5, unit : "g", dailyVals : 25}, {
+			id : 5, name : "Cholesterol", value : 35, unit : "mg", dailyVals : 11}, {
+			id : 6, name : "Sodium", value : 120, unit : "mg", dailyVals : 5}, {	 
+			id : 7, name : "Total Carbohydrate", value : 12, unit : "g", dailyVals : 4}, {
+			id : 8, name : "&nbsp;&nbsp;&nbsp;&nbsp;Dietary Fiber", value : 0, unit : "g", dailyVals : 0}, {
+			id : 9, name : "&nbsp;&nbsp;&nbsp;&nbsp;Sugars", value : 11, unit : "g", dailyVals : null}, {
+			id : 10, name : "Protein", value : 8, unit : "g", dailyVals : null}, {
+			id : 11, name : "Vitamin A", value: null, unit : null, dailyVals : 69}, {
+			id : 12, name : "Vitamin C", value: null, unit : null, dailyVals : 0}, {	 
+			id : 13, name : "Calcium", value: null, unit : null, dailyVals : 30}, {
+			id : 19, name : "Phosphorus", value: null, unit : null, dailyVals : 20}, {
+			id : 18, name : "Riboflavin", value: null, unit : null, dailyVals : 25}];
 		
-		
-		var table = document.getElementById("nutrition-table").rows;
 
 		// Get the original values of the nutrition fact table.
-		function getOriginalValues() {
-			var test1 = "";
-			var test2 = "";
-			for (i=0; i<7; i++) {
-				for (j=0; j<nutrients.length; j++) {
-					if (table[i].cells[0].innerHTML == nutrients[j].name) {
-						table[i].cells[1].innerHTML == nutrients[j].value;
-					} 
-				}
-				
+		function resetlValues() {
+			for (i=0; i<table.length; i++) {
+				for (j=0; j<table[i].cells.length; j++) {
+					for (k=0; k<nutrients.length; k++) {
+						if (table[i].cells[j].innerHTML == nutrients[k].name && table[i].cells.length == 5) {
+							table[i].cells[j+1].innerHTML = nutrients[k].value;
+							table[i].cells[j+3].innerHTML = nutrients[k].dailyVals;
+
+						} if (table[i].cells[j].innerHTML == nutrients[k].name && table[i].cells.length == 6) {
+							table[i].cells[j+1].innerHTML = nutrients[k].dailyVals;
+						}
+					}
+				}	
 			}
-			document.getElementById("demo").innerHTML = nutrients[3].value;
 		}	
 
 		// Get new nutrition facts values based on the input value. 
 		function getNutriFacts() {
 			var servings = document.getElementById("servings").value;
-			var test = "";
-
+			
+			resetlValues();
 			for (i=0; i<table.length; i++) {
 				for (j=0; j<table[i].cells.length; j++) {
 					if (!isNaN(parseInt(table[i].cells[j].innerHTML)) && servings.length != 0 && servings > 0) {
 						table[i].cells[j].innerHTML = table[i].cells[j].innerHTML * servings;
-						//test += "i= " + i + "  j= " + j + "</br>";
 					} 
 				}
 			}
-			test = table[2].cells[0].innerHTML;
-			document.getElementById("demo").innerHTML = test;
 		}
 
 	</script>

@@ -276,8 +276,6 @@ table {
 
 td, th {
 	border-bottom: 1px solid #ddd;
-
-
 }
 
 .top-border {
@@ -291,11 +289,6 @@ td, th {
 .right-aligned {
 	padding-right: 6px;
 	text-align: right;
-}
-
-.tab { 
-    display: inline-block; 
-	margin-left: 20px;	 
 }
 
 
