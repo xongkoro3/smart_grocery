@@ -291,5 +291,24 @@ td, th {
 	text-align: right;
 }
 
+ul#wellness-list li {
+	float: left;
+	list-style-type: none;
+}
 
+li img {
+	width:80px;
+	position: relative;
+}
+
+.center {
+	width: 110px;
+	margin-top: 5%;
+}
+
+.wellness-logos {
+	margin-top: 10px;
+	margin-bottom: 30px; 
+
+}
 

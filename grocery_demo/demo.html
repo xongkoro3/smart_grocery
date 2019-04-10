@@ -172,7 +172,6 @@
 								How much do you consume per meal?: 
 								<input id="servings" type="number" name="servings" min="1" max="22" value="1">
 								<button onclick="getNutriFacts()">Try it!</button>
-								<button onclick="resetValues()">Reset</button>
 								<p id="demo"></p>
 							<p>Serving Size: 3/4 cup (27g) <br/>Servings per container: 22<br></p>
 							<table id="nutrition-table">
@@ -181,12 +180,16 @@
 									<tr>
 										<td class="bold">Calories</td>
 										<td class="right-aligned">140</td>
-										<td colspan="4"></td>
+										<td></td>
+										<td colspan="2"></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>Calories from Fat</td>
 										<td class="right-aligned">10</td>
-										<td colspan="4"></td>
+										<td></td>
+										<td colspan="2"></td>
+										<td></td>
 									</tr>
 								</thead>
 								<tbody class="top-border">
@@ -244,13 +247,15 @@
 										<td>&nbsp;&nbsp;&nbsp;&nbsp;Sugars</td>
 										<td class="right-aligned">10</td>
 										<td>g</td>
-										<td colspan="3"></td>
+										<td colspan="2"></td>
+										<td></td>
 									</tr>
 									<tr>
 										<th>Protein</th>
 										<td class="right-aligned">1</td>
 										<td>g</td>
-										<td colspan="3"></td>
+										<td colspan="2"></td>
+										<td></td>
 									</tr>
 								</tbody>
 								<tfoot class="top-border">
