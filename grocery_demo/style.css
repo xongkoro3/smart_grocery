@@ -269,9 +269,9 @@ img {
 
 table {
 	border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 20px;
-  margin-top: 5px;
+	width: 100%;
+	margin-bottom: 20px;
+  	margin-top: 5px;
 }
 
 td, th {
@@ -291,24 +291,16 @@ td, th {
 	text-align: right;
 }
 
-ul#wellness-list li {
-	float: left;
+ul#wellness-tags li {
 	list-style-type: none;
+	float: left;
 }
 
-li img {
-	width:80px;
-	position: relative;
+ul {
+	padding: 0;
 }
 
-.center {
-	width: 110px;
-	margin-top: 5%;
+.wellness-tag {
+	padding-top: 20px;
+	padding-bottom: 10px;
 }
-
-.wellness-logos {
-	margin-top: 10px;
-	margin-bottom: 30px; 
-
-}
-
