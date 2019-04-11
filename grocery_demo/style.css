@@ -291,16 +291,14 @@ td, th {
 	text-align: right;
 }
 
-ul#wellness-tags li {
+ul#wellness-badge li {
 	list-style-type: none;
 	float: left;
+	height: 80px;
+	width: 100px;
 }
 
 ul {
 	padding: 0;
 }
 
-.wellness-tag {
-	padding-top: 20px;
-	padding-bottom: 10px;
-}
