@@ -76,7 +76,7 @@
 				<div class="wrapper row">
 					<div class="preview col-sm-3">
 						<div class="preview-pic tab-content">
-							<div class="tab-pane active" id="pic-1"><img class="preview-img" src="img1.png" onclick="openModal()" /></div>
+							<div class="tab-pane active" id="pic-1"><img class="preview-img" src="img1.png" /></div>
 							<div class="tab-pane" id="pic-2"><img class="preview-img" src="img2.png" /></div>
 							<div class="tab-pane" id="pic-3"><img class="preview-img" src="img3.png" /></div>
 							<div class="tab-pane" id="pic-4"><img class="preview-img" src="img4.png" /></div>
@@ -301,15 +301,23 @@
 		var modal = document.getElementById("modal-img");
 		var img = document.getElementsByClassName("preview-img");
 		var modalImg = document.getElementById("img01");
-		img[0].onclick = function() { 
-			modal.style.display = "block";
-			modalImg.src = this.src;
+		for (i=0; i<img.length; i++) {
+			img[0].onclick = function() { 
+				modal.style.display = "block";
+				modalImg.src = this.src;
+			}
 		}		
 		// Get the <span> element that closes the modal
 		var span = document.getElementsByClassName("close")[0];
 		// When the user clicks on <span> (x), close the modal
 		span.onclick = function() { 
 			modal.style.display = "none";
+		}
+		// When the user clicks anywhere outside of the modal, close the modal.
+		window.onclick = function(event) {
+			if(event.target == modal) {
+				modal.style.display = "none";
+			}
 		}
 		// Change color of the like botton
 		var like = document.getElementsByClassName("like")[0];
