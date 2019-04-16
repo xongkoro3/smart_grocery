@@ -76,22 +76,22 @@
 				<div class="wrapper row">
 					<div class="preview col-sm-3">
 						<div class="preview-pic tab-content">
-							<div class="tab-pane active" id="pic-1"><img class="preview-img" src="product_images/organic_bread1.jpeg" /></div>
-							<div class="tab-pane" id="pic-2"><img class="preview-img" src="product_images/organic_bread2.jpeg" /></div>
-							<div class="tab-pane" id="pic-3"><img class="preview-img" src="product_images/organic_bread3.jpeg" /></div>
-							<div class="tab-pane" id="pic-4"><img class="preview-img" src="product_images/organic_bread4.jpeg" /></div>
-							<div class="tab-pane" id="pic-5"><img class="preview-img" src="product_images/organic_bread5.jpeg" /></div>
-							<div class="tab-pane" id="pic-6"><img class="preview-img" src="product_images/organic_bread6.jpeg" /></div>
+							<div class="tab-pane active" id="pic-1"><img class="preview-img" src="img/organic_bread1.jpeg" /></div>
+							<div class="tab-pane" id="pic-2"><img class="preview-img" src="img/organic_bread2.jpeg" /></div>
+							<div class="tab-pane" id="pic-3"><img class="preview-img" src="img/organic_bread3.jpeg" /></div>
+							<div class="tab-pane" id="pic-4"><img class="preview-img" src="img/organic_bread4.jpeg" /></div>
+							<div class="tab-pane" id="pic-5"><img class="preview-img" src="img/organic_bread5.jpeg" /></div>
+							<div class="tab-pane" id="pic-6"><img class="preview-img" src="img/organic_bread6.jpeg" /></div>
 							<!-- The Modal -->
 							<div id="modal-img" class="modal"><span class="close">&times;</span><img class="modal-content" id="img01"></div>
 						</div>
 						<ul class="preview-thumbnail nav nav-tabs">
-							<li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="product_images/organic_bread1.jpeg" /></a></li>
-							<li><a data-target="#pic-2" data-toggle="tab"><img src="product_images/organic_bread2.jpeg" /></a></li>
-							<li><a data-target="#pic-3" data-toggle="tab"><img src="product_images/organic_bread3.jpeg" /></a></li>
-							<li><a data-target="#pic-4" data-toggle="tab"><img src="product_images/organic_bread4.jpeg" /></a></li>
-							<li><a data-target="#pic-5" data-toggle="tab"><img src="product_images/organic_bread5.jpeg" /></a></li>
-							<li><a data-target="#pic-6" data-toggle="tab"><img src="product_images/organic_bread6.jpeg" /></a></li>
+							<li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="img/organic_bread1.jpeg" /></a></li>
+							<li><a data-target="#pic-2" data-toggle="tab"><img src="img/organic_bread2.jpeg" /></a></li>
+							<li><a data-target="#pic-3" data-toggle="tab"><img src="img/organic_bread3.jpeg" /></a></li>
+							<li><a data-target="#pic-4" data-toggle="tab"><img src="img/organic_bread4.jpeg" /></a></li>
+							<li><a data-target="#pic-5" data-toggle="tab"><img src="img/organic_bread5.jpeg" /></a></li>
+							<li><a data-target="#pic-6" data-toggle="tab"><img src="img/organic_bread6.jpeg" /></a></li>
 						</ul>
 					</div>
 					<div class="details col-md-6">
@@ -113,10 +113,10 @@
 						<div class="wellness-badges">
 							<ul id="wellness-badge">
 								<li>
-									<img style="width:70px" alt="organic" src="organic.png">
+									<img style="width:70px" alt="organic" src="img/organic.png">
 								</li>
 								<li>
-									<img style="margin-top: 10px" alt="non-gmo" src="nongmo.png">
+									<img style="margin-top: 10px" alt="non-gmo" src="img/nongmo.png">
 								</li>
 							</ul>
 						</div>	
@@ -388,6 +388,7 @@
 		// Change color of the like botton
 		var like = document.getElementsByClassName("like")[0];
 		var liked = document.getElementById("likeBtn");
+		liked.style.color = "black";
 		like.onclick = function () {
 			if (liked.style.color == "black") {
 				liked.style.color = "red";
@@ -407,16 +408,29 @@
 			id : 5, name : "&nbsp;&nbsp;&nbsp;&nbsp;Trans Fat", value : 0, unit : "g", dailyVals : null}, {	
 			id : 6, name : "Cholesterol", value : 0, unit : "mg", dailyVals : 0}, {
 			id : 7, name : "Sodium", value : 180, unit : "mg", dailyVals : 8}, {
-			id : 4, name : "Potassium", value : 115, unit : "mg", dailyVals : 4}, {	 
-			id : 7, name : "Total Carbohydrate", value : 22, unit : "g", dailyVals : 7}, {
-			id : 8, name : "&nbsp;&nbsp;&nbsp;&nbsp;Dietary Fiber", value : 5, unit : "g", dailyVals : 19}, {
-			id : 9, name : "&nbsp;&nbsp;&nbsp;&nbsp;Sugars", value : 5, unit : "g", dailyVals : null}, {
-			id : 10, name : "Protein", value : 5, unit : "g", dailyVals : null}, {
-			id : 11, name : "Vitamin A", value: null, unit : null, dailyVals : 69}, {
-			id : 12, name : "Vitamin C", value: null, unit : null, dailyVals : 0}, {	 
-			id : 13, name : "Calcium", value: null, unit : null, dailyVals : 2}, {
-			id : 14, name : "Phosphorus", value: null, unit : null, dailyVals : 20}, {
-			id : 15, name : "Riboflavin", value: null, unit : null, dailyVals : 25}];
+			id : 8, name : "Potassium", value : 115, unit : "mg", dailyVals : 4}, {	 
+			id : 9, name : "Total Carbohydrate", value : 22, unit : "g", dailyVals : 7}, {
+			id : 10, name : "&nbsp;&nbsp;&nbsp;&nbsp;Dietary Fiber", value : 5, unit : "g", dailyVals : 19}, {
+			id : 11, name : "&nbsp;&nbsp;&nbsp;&nbsp;Sugars", value : 5, unit : "g", dailyVals : null}, {
+			id : 12, name : "Protein", value : 5, unit : "g", dailyVals : null}, {
+			id : 13, name : "Vitamin A", value: null, unit : null, dailyVals : 69}, {	 
+			id : 14, name : "Calcium", value: null, unit : null, dailyVals : 2}, {
+			id : 15, name : "Thiamin", value: null, unit : null, dailyVals : 15}, {
+			id : 16, name : "Niacin", value: null, unit : null, dailyVals : 8}, {	 
+			id : 17, name : "Vitamin B6", value: null, unit : null, dailyVals : 4}, {
+			id : 18, name : "Vitamin K", value: null, unit : null, dailyVals : 0}, {
+			id : 19, name : "Manganese", value: null, unit : null, dailyVals : 45}, {
+			id : 20, name : "Phosphorus", value: null, unit : null, dailyVals : 10}, {
+			id : 21, name : "Magnesium", value: null, unit : null, dailyVals : 10}, {
+			id : 22, name : "Vitamin C", value: null, unit : null, dailyVals : 0}, {	 
+			id : 23, name : "Iron", value: null, unit : null, dailyVals : 8}, {
+			id : 24, name : "Riboflavin", value: null, unit : null, dailyVals : 4}, {
+			id : 25, name : "Folic Acid", value: null, unit : null, dailyVals : 4}, {
+			id : 26, name : "Vitamin E", value: null, unit : null, dailyVals : 0}, {
+			id : 27, name : "Zinc", value: null, unit : null, dailyVals : 6}, {
+			id : 28, name : "Copper", value: null, unit : null, dailyVals : 6}, {	 
+			id : 29, name : "Selenium", value: null, unit : null, dailyVals : 20}, {
+			id : 30, name : "Panthothenic Acid", value: null, unit : null, dailyVals : 2}];
 		
 
 		// Get the original values of the nutrition fact table.

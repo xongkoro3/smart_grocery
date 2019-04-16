@@ -76,18 +76,18 @@
 				<div class="wrapper row">
 					<div class="preview col-sm-3">
 						<div class="preview-pic tab-content">
-							<div class="tab-pane active" id="pic-1"><img class="preview-img" src="img1.png" /></div>
-							<div class="tab-pane" id="pic-2"><img class="preview-img" src="img2.png" /></div>
-							<div class="tab-pane" id="pic-3"><img class="preview-img" src="img3.png" /></div>
-							<div class="tab-pane" id="pic-4"><img class="preview-img" src="img4.png" /></div>
+							<div class="tab-pane active" id="pic-1"><img class="preview-img" src="img/milk1.png" /></div>
+							<div class="tab-pane" id="pic-2"><img class="preview-img" src="img/milk2.png" /></div>
+							<div class="tab-pane" id="pic-3"><img class="preview-img" src="img/milk3.png" /></div>
+							<div class="tab-pane" id="pic-4"><img class="preview-img" src="img/milk4.png" /></div>
 							<!-- The Modal -->
 							<div id="modal-img" class="modal"><span class="close">&times;</span><img class="modal-content" id="img01"></div>
 						</div>
 						<ul class="preview-thumbnail nav nav-tabs">
-							<li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="img1.png" /></a></li>
-							<li><a data-target="#pic-2" data-toggle="tab"><img src="img2.png" /></a></li>
-							<li><a data-target="#pic-3" data-toggle="tab"><img src="img3.png" /></a></li>
-							<li><a data-target="#pic-4" data-toggle="tab"><img src="img4.png" /></a></li>
+							<li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="img/milk1.png" /></a></li>
+							<li><a data-target="#pic-2" data-toggle="tab"><img src="img/milk2.png" /></a></li>
+							<li><a data-target="#pic-3" data-toggle="tab"><img src="img/milk3.png" /></a></li>
+							<li><a data-target="#pic-4" data-toggle="tab"><img src="img/milk4.png" /></a></li>
 						</ul>
 					</div>
 					<div class="details col-md-6">
@@ -109,10 +109,10 @@
 						<div class="wellness-badges">
 							<ul id="wellness-badge">
 								<li>
-									<img style="width:70px" alt="organic" src="organic.png">
+									<img style="width:70px" alt="organic" src="img/organic.png">
 								</li>
 								<li>
-									<img style="margin-top: 10px" alt="non-gmo" src="nongmo.png">
+									<img style="margin-top: 10px" alt="non-gmo" src="img/nongmo.png">
 								</li>
 							</ul>
 						</div>	
@@ -322,6 +322,7 @@
 		// Change color of the like botton
 		var like = document.getElementsByClassName("like")[0];
 		var liked = document.getElementById("likeBtn");
+		liked.style.color = "black";
 		like.onclick = function () {
 			if (liked.style.color == "black") {
 				liked.style.color = "red";
